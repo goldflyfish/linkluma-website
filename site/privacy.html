@@ -32,18 +32,21 @@
       <section class="article-section" aria-labelledby="local-data">
         <h2 id="local-data">What stays on your device</h2>
         <p>The app uses Windows network status and adapter traffic counters to show your connection and current download and upload activity. It saves settings, speed-test history, and recent speed-test start times locally. Saved test history can include adapter and network identifiers when they are available, so a result can be matched to the connection it measured.</p>
+        <p>Local settings, including your agreement to the speed-test notice, remain until you reset local data. LinkLuma keeps the newest 100 saved speed-test results until you delete an individual result, clear all saved results, or reset local data.</p>
+        <p>To enforce M-Lab's limit of 40 test starts in 24 hours, LinkLuma keeps a local quota file of speed-test start records. Resetting local data leaves this file in place so LinkLuma can continue to enforce that limit. Only start times from the last 24 hours count. Expired timestamps can remain in the quota file until the next allowed test starts.</p>
         <p>The recent traffic graph keeps its readings in memory while the app runs, for up to ten minutes. It starts fresh when the app restarts.</p>
       </section>
 
       <section class="article-section" aria-labelledby="speed-tests">
         <h2 id="speed-tests">Optional M-Lab speed tests</h2>
-        <p>If you choose to run a speed test, LinkLuma asks for your agreement before the first test. The test sends and receives generated traffic with M-Lab. M-Lab receives your public IP address and test results, publishes test data, and retains it indefinitely. Read <a href="https://www.measurementlab.net/privacy/">M-Lab’s privacy policy</a> before testing.</p>
+        <p>If you choose to run a speed test, LinkLuma asks for your agreement before the first test. The test sends and receives generated traffic with M-Lab.</p>
+        <p>Under its privacy policy, M-Lab may collect your public-facing IP address, the test timestamp, measurement results, and metadata about the client software and operating system. M-Lab publishes test data and retains it indefinitely. M-Lab says it uses the GDPR legitimate-interests basis for its processing of test data. Read <a href="https://www.measurementlab.net/privacy/">M-Lab’s privacy policy</a> before testing.</p>
         <p>M-Lab speed tests are only available to people aged 16 or older.</p>
       </section>
 
       <section class="article-section" aria-labelledby="privacy-rights">
         <h2 id="privacy-rights">Your choices and privacy rights</h2>
-        <p>M-Lab speed tests are optional. You can decline or stop future tests by choosing not to start them. You can clear local speed-test history in the app, but this does not remove data M-Lab has already published.</p>
+        <p>M-Lab speed tests are optional. You can decline or stop future tests by choosing not to start them. You can delete an individual saved result, clear all saved results, or reset local data in the app. This does not remove data M-Lab has already published.</p>
         <p>Where applicable law grants these rights, you may ask for a copy of your personal data, correction or deletion, limits on how it is used, to object to its use, or to receive it in a portable format.</p>
         <p>For data held by the publisher, such as support emails, contact <a href="mailto:linkluma@proton.me">linkluma@proton.me</a>. For test data under M-Lab’s control, contact <a href="mailto:privacy@measurementlab.net">privacy@measurementlab.net</a> and see <a href="https://www.measurementlab.net/privacy/">M-Lab’s privacy policy</a>. In the European Union, you can also complain to the relevant data protection authority; see the <a href="https://www.edpb.europa.eu/about-edpb/board/members_en">European Data Protection Board directory</a>.</p>
       </section>
@@ -55,7 +58,7 @@
 
       <section class="article-section" aria-labelledby="privacy-contact">
         <h2 id="privacy-contact">Questions</h2>
-        <p>Contact <a href="mailto:linkluma@proton.me">linkluma@proton.me</a> with questions about LinkLuma. If you email support, your email address and the information you send are shared with the publisher through email.</p>
+        <p>Contact <a href="mailto:linkluma@proton.me">linkluma@proton.me</a> with questions about LinkLuma. If you email support, the publisher keeps your email address and message to answer you and for later follow-up.</p>
       </section>
     </main>
 
