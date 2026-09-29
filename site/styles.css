@@ -125,6 +125,13 @@ a:focus-visible {
   text-decoration: underline;
 }
 
+.site-nav a[aria-current="page"] {
+  color: #84e8f4;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.45em;
+}
+
 main {
   flex: 1;
 }
@@ -234,8 +241,10 @@ p {
 
 .product-visual img {
   display: block;
-  width: 100%;
+  width: auto;
+  max-width: 100%;
   height: auto;
+  margin-inline: auto;
   border-radius: 14px;
 }
 
@@ -259,6 +268,48 @@ p {
   margin: 0;
   color: #b9c8da;
   font-size: 17px;
+}
+
+.home-link-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.home-link-card {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  min-height: 220px;
+  padding: clamp(24px, 3vw, 36px);
+  border: 1px solid #34445c;
+  border-radius: 20px;
+  color: #c4cfdf;
+  background: linear-gradient(160deg, #1d293a, #151e2b);
+  text-decoration: none;
+}
+
+.home-link-card:hover {
+  border-color: #84e8f4;
+  color: #e4f0fa;
+}
+
+.home-link-kicker {
+  color: #84e8f4;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.home-link-card strong {
+  color: #f3f7fd;
+  font-size: clamp(22px, 2.5vw, 30px);
+  letter-spacing: -0.04em;
+}
+
+.home-link-card strong span {
+  color: #84e8f4;
 }
 
 .feature-grid {
@@ -316,8 +367,8 @@ p {
   background: linear-gradient(160deg, #1d293a, #151e2b);
 }
 
-.shot-pill,
-.shot-high-contrast {
+.shot-classic,
+.shot-pill {
   grid-column: span 8;
 }
 
@@ -326,6 +377,7 @@ p {
   grid-column: span 4;
 }
 
+.shot-high-contrast,
 .shot-wide {
   grid-column: span 12;
 }
@@ -354,8 +406,8 @@ p {
 }
 
 .shot-wide img {
-  width: 100%;
-  max-width: 1000px;
+  width: auto;
+  max-width: min(100%, 1000px);
   max-height: none;
 }
 
@@ -418,6 +470,30 @@ p {
 
 .site-footer p {
   margin: 0;
+}
+
+.feature-page,
+.gallery-page {
+  padding-bottom: 100px;
+}
+
+.page-intro {
+  max-width: 760px;
+  padding: clamp(54px, 8vw, 96px) 0 40px;
+}
+
+.page-intro h1 {
+  margin-bottom: 18px;
+  font-size: clamp(42px, 6vw, 64px);
+}
+
+.page-intro .lead {
+  margin-bottom: 0;
+}
+
+.page-next {
+  margin: 0;
+  font-weight: 700;
 }
 
 .article-page {
@@ -510,6 +586,10 @@ p {
   }
 
   .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-link-grid {
     grid-template-columns: 1fr;
   }
 
