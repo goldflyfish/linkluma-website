@@ -4,227 +4,113 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0d111b">
-  <meta name="description" content="LinkLuma is a Windows 11 network status app that brings live traffic and connection status into view.">
-  <title>LinkLuma — Coming soon</title>
-  <style>
-    :root {
-      color-scheme: dark;
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: #0d111b;
-      color: #f4f7fc;
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      min-width: 320px;
-      min-height: 100vh;
-      margin: 0;
-      background:
-        radial-gradient(ellipse at 88% 10%, #6442b327, transparent 38%),
-        radial-gradient(ellipse at 10% 88%, #1fcfe827, transparent 40%),
-        #0d111b;
-    }
-
-    .page {
-      width: min(100% - 48px, 1080px);
-      min-height: 100vh;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-    }
-
-    header {
-      padding: 35px 0;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 20px;
-      font-weight: 700;
-      letter-spacing: -0.03em;
-    }
-
-    .brand-mark {
-      position: relative;
-      width: 28px;
-      height: 28px;
-      border: 3px solid #49dcef;
-      border-right-color: #ab8dff;
-      border-radius: 9px;
-      transform: rotate(-15deg);
-    }
-
-    .brand-mark::after {
-      position: absolute;
-      inset: 6px;
-      border-radius: 2px;
-      background: #f4f7fc;
-      content: "";
-    }
-
-    main {
-      flex: 1;
-      display: grid;
-      align-items: center;
-      grid-template-columns: minmax(0, 1fr) minmax(260px, 420px);
-      gap: clamp(36px, 7vw, 100px);
-      padding: 56px 0 92px;
-    }
-
-    .eyebrow {
-      margin: 0 0 22px;
-      color: #72e6f3;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-    }
-
-    h1 {
-      max-width: 620px;
-      margin: 0;
-      font-size: clamp(44px, 6.5vw, 82px);
-      font-weight: 700;
-      letter-spacing: -0.065em;
-      line-height: 1.04;
-    }
-
-    h1 span { color: #72e6f3; }
-
-    .intro {
-      max-width: 520px;
-      margin: 28px 0 0;
-      color: #bbc7d9;
-      font-size: clamp(17px, 2vw, 20px);
-      line-height: 1.65;
-    }
-
-    .note {
-      display: inline-block;
-      margin: 36px 0 0;
-      padding: 10px 16px;
-      border: 1px solid #41516a;
-      border-radius: 999px;
-      color: #e4ebf6;
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .preview {
-      padding: 24px;
-      border: 1px solid #34445c;
-      border-radius: 28px;
-      background: linear-gradient(150deg, #222c40, #151d2b 72%);
-      box-shadow: 0 30px 90px #0007;
-    }
-
-    .preview-title {
-      margin: 0 0 24px;
-      color: #e9eff8;
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .preview-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-
-    .preview-item {
-      min-height: 116px;
-      padding: 18px;
-      border: 1px solid #334158;
-      border-radius: 17px;
-      background: #0e1624b8;
-    }
-
-    .preview-item strong {
-      display: block;
-      margin-bottom: 16px;
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-    .preview-item p {
-      margin: 0;
-      color: #d7e1ed;
-      font-size: 15px;
-      line-height: 1.45;
-    }
-
-    .download strong { color: #72e6f3; }
-    .upload strong { color: #c0aaff; }
-
-    .preview-caption {
-      margin: 20px 2px 0;
-      color: #a6b7cc;
-      font-size: 12px;
-      line-height: 1.5;
-    }
-
-    footer {
-      padding: 24px 0 35px;
-      border-top: 1px solid #314055;
-      color: #a6b7cc;
-      font-size: 13px;
-    }
-
-    @media (max-width: 760px) {
-      .page { width: min(100% - 36px, 560px); }
-      main { grid-template-columns: 1fr; padding: 45px 0 72px; }
-      .preview { max-width: 440px; }
-    }
-
-    @media (max-width: 420px) {
-      .preview { padding: 16px; }
-      .preview-grid { gap: 8px; }
-      .preview-item { padding: 14px; }
-    }
-  </style>
+  <meta name="description" content="LinkLuma brings live traffic, connection status, and a clear network graph to your Windows 11 desktop. Coming soon.">
+  <title>LinkLuma — Your connection, at a glance</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="page">
-    <header>
-      <div class="brand"><span class="brand-mark" aria-hidden="true"></span>LinkLuma</div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="LinkLuma home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>LinkLuma</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="#features">Features</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="support.html">Support</a>
+      </nav>
     </header>
 
-    <main>
-      <section aria-labelledby="headline">
-        <p class="eyebrow">A clearer view of your connection</p>
-        <h1 id="headline">Your connection, <span>at a glance.</span></h1>
-        <p class="intro">LinkLuma brings live download and upload traffic, network connection, and internet availability into a compact Windows 11 widget.</p>
-        <p class="note">Coming soon</p>
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Network clarity for Windows 11</p>
+          <h1 id="hero-title">Your connection,<br><span>at a glance.</span></h1>
+          <p class="lead">See live download and upload traffic, check your network and internet status, and keep the details you need close to hand.</p>
+          <span class="availability">Coming soon</span>
+          <p class="hero-note">LinkLuma is in development. A public download is not available yet.</p>
+        </div>
+        <figure class="product-visual">
+          <div class="mock-widget">
+            <div class="mock-header">
+              <span class="mock-logo" aria-hidden="true">▂▅▇</span>
+              <strong>LinkLuma</strong>
+              <span class="mock-controls" aria-hidden="true">⚙ ×</span>
+            </div>
+            <div class="mock-adapter">
+              <span class="mock-adapter-icon" aria-hidden="true">▣</span>
+              <div><strong>Ethernet</strong><span>Active network adapter</span></div>
+            </div>
+            <div class="mock-status">
+              <span><span aria-hidden="true">●</span> Network connected</span>
+              <span><span aria-hidden="true">●</span> Internet available</span>
+            </div>
+            <div class="mock-speeds">
+              <div class="mock-download">
+                <span class="mock-label">↓ Download</span>
+                <strong>24.8</strong><span>Mbps</span>
+              </div>
+              <div class="mock-upload">
+                <span class="mock-label">↑ Upload</span>
+                <strong>3.2</strong><span>Mbps</span>
+              </div>
+            </div>
+            <p class="mock-footnote">Live traffic</p>
+          </div>
+          <figcaption>Illustrative preview · sample data</figcaption>
+        </figure>
       </section>
 
-      <aside class="preview" aria-label="LinkLuma feature overview">
-        <p class="preview-title">The essentials, all in view</p>
-        <div class="preview-grid">
-          <div class="preview-item download">
-            <strong>↓ Download</strong>
-            <p>Live traffic</p>
-          </div>
-          <div class="preview-item upload">
-            <strong>↑ Upload</strong>
-            <p>Live traffic</p>
-          </div>
-          <div class="preview-item">
-            <strong>Network</strong>
-            <p>Connection status</p>
-          </div>
-          <div class="preview-item">
-            <strong>Internet</strong>
-            <p>Availability status</p>
-          </div>
+      <section class="features section-space" id="features" aria-labelledby="features-title">
+        <div class="section-heading">
+          <p class="eyebrow">Made for a quick look</p>
+          <h2 id="features-title">The essentials, easy to read.</h2>
+          <p>Live activity and connection health each have their own place, so one number never has to tell the whole story.</p>
         </div>
-        <p class="preview-caption">A feature overview. No live data is shown on this page.</p>
-      </aside>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <span class="feature-symbol cyan" aria-hidden="true">↓ ↑</span>
+            <h3>Live traffic</h3>
+            <p>Watch current download and upload speeds in clearly labeled units. These readings show traffic now, separate from a speed test.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-symbol violet" aria-hidden="true">◎</span>
+            <h3>Two clear statuses</h3>
+            <p>See whether your local network is connected and whether Windows reports internet access. Checking and unavailable states are shown plainly.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-symbol cyan" aria-hidden="true">▣</span>
+            <h3>Your kind of widget</h3>
+            <p>Choose a full widget or a compact mini view. LinkLuma stays in the system tray when you close the floating widget.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-symbol violet" aria-hidden="true">⌁</span>
+            <h3>Recent traffic graph</h3>
+            <p>Open a graph to follow recent download and upload activity over time, with missing readings shown as gaps.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="closing-panel section-space" aria-labelledby="closing-title">
+        <div>
+          <p class="eyebrow">When you want a deeper check</p>
+          <h2 id="closing-title">A speed test when you choose.</h2>
+          <p>LinkLuma also offers an optional M-Lab speed test. It uses your internet connection and shares test data with M-Lab, so the app asks before the first test. <a href="privacy.html">See how data is handled</a>.</p>
+        </div>
+        <a class="text-link" href="support.html">Get support <span aria-hidden="true">↗</span></a>
+      </section>
     </main>
 
-    <footer>LinkLuma · Live network status for Windows 11</footer>
+    <footer class="site-footer">
+      <p>© Mykola Chornyi · LinkLuma</p>
+      <nav aria-label="Footer navigation">
+        <a href="privacy.html">Privacy</a>
+        <a href="support.html">Support</a>
+        <a href="mailto:linkluma@proton.me">Contact</a>
+      </nav>
+    </footer>
   </div>
 </body>
 </html>
